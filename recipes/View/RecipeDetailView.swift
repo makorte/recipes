@@ -37,14 +37,14 @@ struct RecipeDetailView: View {
                     .multilineTextAlignment(.center)
                     .padding(.top, 1.0)
                 
-                Text("Ingrediants")
+                Text("Ingredients")
                     .font(.title3)
                     .fontWeight(.semibold)
                     .padding(.vertical, 1.0)
                 
                 VStack(alignment: .leading, spacing: 10.0) {
-                    ForEach (recipe.ingredients, id: \.self) { ingrediant in
-                        Text(ingrediant)
+                    ForEach (recipe.ingredients) { ingredient in
+                        Text(ingredient.name)
                             .fontWeight(.thin)
                     }
                 }
