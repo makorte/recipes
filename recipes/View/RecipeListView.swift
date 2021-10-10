@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct RecipeListView: View {
-    @ObservedObject var recipes = RecipeModel()
+    @EnvironmentObject var model:RecipeModel
     
     var body: some View {
         NavigationView {
-            List(recipes.recipes) { recipe in
+            List(model.recipes) { recipe in
                 NavigationLink(destination: RecipeDetailView(recipe: recipe), label: {
                     HStack(spacing: 10.0) {
                         Image(recipe.image)
